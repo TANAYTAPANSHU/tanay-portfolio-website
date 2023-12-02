@@ -16,11 +16,11 @@ const Home = () => {
   const adjust3dBackgroundForScreenSize = () => {
     let screenScale = null;
     const screenPosition = [5, -7.5, -43];
-    const rotation = [0.45, 3.4, 0];
+    const rotation = [0.3, 3.4, 0];
     if (window.innerWidth < 768) {
       screenScale = [1, 1, 1];
     } else {
-      screenScale = [1.5, 1.5, 1.5];
+      screenScale = [1.35, 1.35, 1.35];
     }
     return [screenScale, screenPosition, rotation];
   };

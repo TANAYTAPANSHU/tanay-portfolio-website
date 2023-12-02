@@ -2,14 +2,16 @@ import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
 
-import  Man  from  "../models/Man";
-import Loader from "../components/Loader";
 
+import useAlert from "../hooks/useAlert";
+import Man from "../models/Man";
+import Alert from "../components/Alert";
+import Loader from "../components/Loader";
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  // const { alert, showAlert, hideAlert } = useAlert();
+  const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("Static Pose");
 
@@ -36,19 +38,19 @@ const Contact = () => {
           to_email: "sujata@jsmastery.pro",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY  
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
           setLoading(false);
-          // showAlert({
-          //   show: true,
-          //   text: "Thank you for your message 😃",
-          //   type: "success",
-          // });
+          showAlert({
+            show: true,
+            text: "Thank you for your message 😃",
+            type: "success",
+          });
 
           setTimeout(() => {
-            // hideAlert(false);
+            hideAlert(false);
             setCurrentAnimation("idle");
             setForm({
               name: "",
@@ -62,18 +64,18 @@ const Contact = () => {
           console.error(error);
           setCurrentAnimation("idle");
 
-          // showAlert({
-          //   show: true,
-          //   text: "I didn't receive your message 😢",
-          //   type: "danger",
-          // });
+          showAlert({
+            show: true,
+            text: "I didn't receive your message 😢",
+            type: "danger",
+          });
         }
       );
   };
 
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
-      {/* {alert.show && <Alert {...alert} />} */}
+      {alert.show && <Alert {...alert} />}
 
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
@@ -103,7 +105,7 @@ const Contact = () => {
               type='email'
               name='email'
               className='input'
-              placeholder='tanaytapanshu@gmail.com'
+              placeholder='John@gmail.com'
               required
               value={form.email}
               onChange={handleChange}
@@ -115,7 +117,7 @@ const Contact = () => {
             Your Message
             <textarea
               name='message'
-              rows={4}
+              rows='4'
               className='textarea'
               placeholder='Write your thoughts here...'
               value={form.message}
@@ -140,7 +142,7 @@ const Contact = () => {
       <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
         <Canvas
           camera={{
-            position: [0, 0, 2],
+            position: [0, 0, 5],
             fov: 75,
             near: 0.1,
             far: 1000,
@@ -159,9 +161,9 @@ const Contact = () => {
           <Suspense fallback={<Loader />}>
             <Man
               currentAnimation={currentAnimation}
-              position={[0, -0.4, 0.1]}
+              position={[0.5, -0.35, 0]}
               rotation={[12.629, -0.6, 0]}
-              scale={[0.35, 0.35, 0.35]}
+              scale={[0.75, 0.75, 0.75]}
             />
           </Suspense>
         </Canvas>
