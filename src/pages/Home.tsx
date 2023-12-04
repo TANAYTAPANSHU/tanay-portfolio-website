@@ -11,6 +11,7 @@ const Home = () => {
   //boolean to check for rotation motion
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
+  const [instructionVisible,setInstructionVisible] = useState<boolean>(true)
    
 //adjust the screen size for the background scene 
   const adjust3dBackgroundForScreenSize = () => {
@@ -41,12 +42,21 @@ const Home = () => {
   };
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
 
+  setTimeout(()=>{
+   setInstructionVisible(false)
+  },5000 )
+
   return (
     <section className="w-full h-screen relative">
-      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+      <div className='absolute top-48 left-0 right-0 z-10 flex items-center justify-center'>
        {currentStage && <HomeInfo currentStage={currentStage} /> }
      </div>
-
+   {instructionVisible && (
+ <div  className='absolute w-1/2 top-20 left-0 right-0 z-10 mx-auto flex items-center justify-center bg-white p-8 '>
+ <h1 className="text-2xl md:text-base">Take a tour of the project—simply drag around.</h1>
+</div>
+   )}
+    
       <Canvas
         className={`w-full h-screen bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"

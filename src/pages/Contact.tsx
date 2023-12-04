@@ -25,17 +25,18 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setCurrentAnimation("mixamo.com");
-
+    setCurrentAnimation("Static Pose");
+   
+    console.log(import.meta.env.VITE_APP_EMAILJS_SERVICE_ID )     
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Tanay Tapanshu",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "tanaytapanshu@gmai.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -44,20 +45,19 @@ const Contact = () => {
         () => {
           setLoading(false);
           showAlert({
-            show: true,
             text: "Thank you for your message 😃",
             type: "success",
           });
 
           setTimeout(() => {
-            hideAlert(false);
+            hideAlert();
             setCurrentAnimation("idle");
             setForm({
               name: "",
               email: "",
               message: "",
             });
-          }, [3000]);
+          }, 2000);
         },
         (error) => {
           setLoading(false);
@@ -65,7 +65,6 @@ const Contact = () => {
           setCurrentAnimation("idle");
 
           showAlert({
-            show: true,
             text: "I didn't receive your message 😢",
             type: "danger",
           });
@@ -100,7 +99,7 @@ const Contact = () => {
             />
           </label>
           <label className='text-black-500 font-semibold'>
-            Email
+           Your Email
             <input
               type='email'
               name='email'

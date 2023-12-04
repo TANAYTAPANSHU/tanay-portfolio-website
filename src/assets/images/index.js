@@ -4,6 +4,10 @@ import shopify from './shopify.png'
 import starbucks from './starbucks.png'
 import tesla from './tesla.png'
 import logo from './logo.svg'
+import cradlewise from './cradlewise.jpeg'
+import mela from './mela.jpeg'
+import relevel from './relevel.jpeg'
+import cellstrat from './cellstrat.svg'
 
 export {
     hero,
@@ -11,5 +15,10 @@ export {
     shopify,
     starbucks,
     tesla,
-    logo
+    logo,
+    cradlewise,
+    mela,
+    relevel,
+    cellstrat
+
 }

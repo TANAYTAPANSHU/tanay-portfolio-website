@@ -51,7 +51,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-7xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+    @apply flex justify-between items-center sm:px-16 px-8 py-4  mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
   }
 
   .footer {
@@ -77,6 +77,14 @@ body:has(.card[data-color="green"]:hover) {
   .cta-text {
     @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
   }
+  .tooltip {
+    @apply invisible absolute;
+  }
+  
+  .has-tooltip:hover .tooltip {
+    @apply visible z-50 top-8;
+  }
+
 }
 
 .glassmorphism {

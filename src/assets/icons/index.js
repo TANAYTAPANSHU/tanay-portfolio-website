@@ -26,6 +26,9 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import postgresql from './postgresql.png'
+import python from './python.png'
+import antd from './antd.svg'
 
 export {
     css,
@@ -55,5 +58,8 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    postgresql,
+    python,
+    antd
 }

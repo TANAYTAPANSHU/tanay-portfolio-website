@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import { meta, shopify, starbucks, tesla, cradlewise, mela, relevel, cellstrat } from "../assets/images";
 import {
     car,
     contact,
@@ -23,13 +23,82 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    typescript,
+    python,
+    postgresql,
+    antd
 } from "../assets/icons";
+
+interface linkInterface {
+  "desc": string,
+  "href":string
+}
+
+interface experience{
+    title:string,
+    company_name: string,
+    icon:string,
+    iconBg:string,
+    date:string,
+    points:string[],
+    skills:string[] | undefined,
+    links: linkInterface[] | undefined
+}
 
 export const skills = [
     {
+        imageUrl: html,
+        name: "HTML",
+        type: "Frontend",
+    },
+    {
         imageUrl: css,
         name: "CSS",
+        type: "Frontend",
+    },
+    {
+        imageUrl: javascript,
+        name: "JavaScript",
+        type: "Frontend",
+    },
+    {
+        imageUrl: react,
+        name: "React JS & Native",
+        type: "Frontend",
+    },
+    {
+        imageUrl: redux,
+        name: "Redux",
+        type: "State Management",
+    },
+    {
+        imageUrl: nextjs,
+        name: "Next.js",
+        type: "Frontend",
+    },
+    {
+        imageUrl: python,
+        name: "Python",
+        type: "Backend",
+    },
+    {
+        imageUrl: antd,
+        name: "Ant Design",
+        type: "Frontend",
+    },
+    {
+        imageUrl: mui,
+        name: "Material-UI",
+        type: "Frontend",
+    },
+    {
+        imageUrl: tailwindcss,
+        name: "Tailwind CSS",
+        type: "Frontend",
+    },
+    {
+        imageUrl: typescript,
+        name: "TypeScript",
         type: "Frontend",
     },
     {
@@ -48,128 +117,95 @@ export const skills = [
         type: "Version Control",
     },
     {
-        imageUrl: html,
-        name: "HTML",
-        type: "Frontend",
-    },
-    {
-        imageUrl: javascript,
-        name: "JavaScript",
-        type: "Frontend",
-    },
-    {
-        imageUrl: mongodb,
-        name: "MongoDB",
+        imageUrl: postgresql,
+        name: "PostgreSql",
         type: "Database",
-    },
-    {
-        imageUrl: motion,
-        name: "Motion",
-        type: "Animation",
-    },
-    {
-        imageUrl: mui,
-        name: "Material-UI",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nextjs,
-        name: "Next.js",
-        type: "Frontend",
     },
     {
         imageUrl: nodejs,
         name: "Node.js",
         type: "Backend",
     },
-    {
-        imageUrl: react,
-        name: "React",
-        type: "Frontend",
-    },
-    {
-        imageUrl: redux,
-        name: "Redux",
-        type: "State Management",
-    },
-    {
-        imageUrl: sass,
-        name: "Sass",
-        type: "Frontend",
-    },
-    {
-        imageUrl: tailwindcss,
-        name: "Tailwind CSS",
-        type: "Frontend",
-    },
-    {
-        imageUrl: typescript,
-        name: "TypeScript",
-        type: "Frontend",
-    }
 ];
 
-export const experiences = [
+export const experiences : experience[] = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
-        icon: starbucks,
-        iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
+        title: "Frontend Developer",
+        company_name: "Cradlewise",
+        icon: cradlewise,
+        iconBg: "rgb(252 209 209)",
+        date: "April 2022 - Nov 2023",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
+            "Developed an advanced internal dashboard used organization-wide for day to day tasks ,enhancing organizational efficiency.",
+            "Collaborating with cross-functional teams, including co-founder, Director of Engineering, and Product Manager. Built features in collaboration with the app team, AI team, marketing, and other developers to create high-quality products.",
+            "Built a highly optimized chatbot similar to OpenAI ChatGpt for internal use",
+            "Participating in code reviews and providing constructive feedback to other developers.",
+        ],
+        skills: ["HTML","CSS" , "JavaScript", "Typescript",  "React JS", "Next JS",  "AWS", "PSQL", "Python"], 
+        links : [{desc:"Cradlewise Website",href:"https://cradlewise.com/"}  ]
+    },
+    {
+        title: "Software Engineer",
+        company_name: "Mela (YC S-19)",
+        icon: mela,
+        iconBg: "rgb(219 205 236)",
+        date: "Jan 2021 - Mar 2022",
+        points: [
+            " Worked on the frontend development of no code application Namaste Business, which develops users own app apk in less than 2 minutes.",
+            "Developed, optimized, and worked on improving the UIs of the Mela application, collaborating with the product manager and designers. (Mela had grown to over 100,000 downloads, which is a significant increase from the approximately 50,000 downloads it had when I initially joined.)",
             "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
             "Implementing responsive design and ensuring cross-browser compatibility.",
             "Participating in code reviews and providing constructive feedback to other developers.",
         ],
+        skills: ["React Native" , "JavaScript", "HTML", "CSS", "REST"],
+        links : [{desc:"Namste Application ",href:"https://play.google.com/store/search?q=namaste+business&c=apps&hl=en&gl=US" } , {desc:"Mela Website", href: "https://mahamela.in/" }  ]
     },
     {
-        title: "React Native Developer",
-        company_name: "Tesla",
-        icon: tesla,
-        iconBg: "#fbc3bc",
-        date: "Jan 2021 - Feb 2022",
+        title: "Software Engineer Intern",
+        company_name: "Mela",
+        icon: mela,
+        iconBg: "rgb(219 205 236)",
+        date: "March 2021 - Jul 2021",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Collaborated with senior developers, including the CTO, to contribute to the mobile application.",
+            "Worked on React Native for the first time, acquiring valuable hands-on experience in mobile app development.",
+            "Gained insights into production-level coding practices, including working with test and production environments.",
+            "Successfully transitioned from an intern to a full-time role, showcasing dedication and a rapid learning curve.",
         ],
+        skills:[],
+        links:[]
     },
     {
-        title: "Web Developer",
-        company_name: "Shopify",
-        icon: shopify,
-        iconBg: "#b7e4c7",
-        date: "Jan 2022 - Jan 2023",
+        title: "Subject Matter Expert",
+        company_name: "Relevel by Unacademy",
+        icon: relevel,
+        iconBg: "blue",
+        date: "Oct 2021 - Feb 2022",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Worked with Unacademy's (Unicorn Indian Startup) latest initiative, Relevel.",
+            "Created quality content (Pre-read Doc, Lesson Plan, and Pitch Deck) for the Full Stack Web Development Bootcamp.",
+            "Created apps and code for sessions and learners utilizing the fundamental ideas of frontend HTML, CSS, and JS and React",
         ],
+        skills: ["HTML", "CSS", "JavaScript" , "React"],
+        links : [{desc:"Relevel Website",href:"https://relevel.com/"}  ]
     },
     {
-        title: "Full stack Developer",
-        company_name: "Meta",
-        icon: meta,
-        iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
+        title: "Web Developer Intern",
+        company_name: "CellStrat",
+        icon: cellstrat,
+        iconBg: "#efefef",
+        date: "Jul 2020 - Dec 2020",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Worked on building there  web platform using React JS",
+            "Also worked on creating the critical web architecture for health AI product ",
         ],
+        skills: ["React JS"],
+        links : [{desc:"CellStrat Website",href:"https://cellstrathub.com/"}  ]
     },
+ 
 ];
 
 export const socialLinks = [
-    {
-        name: 'Contact',
-        iconUrl: contact,
-        link: '/contact',
-    },
     {
         name: 'GitHub',
         iconUrl: github,
