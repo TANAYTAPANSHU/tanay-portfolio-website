@@ -44,7 +44,7 @@ const Home = () => {
 
   setTimeout(()=>{
    setInstructionVisible(false)
-  },5000 )
+  },5500 )
 
   return (
     <section className="w-full h-screen relative">
@@ -53,7 +53,7 @@ const Home = () => {
      </div>
    {instructionVisible && (
  <div  className='absolute w-1/2 top-20 left-0 right-0 z-10 mx-auto flex items-center justify-center bg-white p-8 '>
- <h1 className="text-2xl md:text-base">Take a tour of the project—simply drag around.</h1>
+ <span className="text-xl md:text-4xl">Take a tour of the project—simply drag around.</span>
 </div>
    )}
     
