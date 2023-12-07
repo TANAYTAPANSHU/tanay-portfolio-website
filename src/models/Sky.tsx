@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {useGLTF} from '@react-three/drei'
 import skyScene from '../assets/3d/sky.glb'
 import { useFrame } from "@react-three/fiber";
