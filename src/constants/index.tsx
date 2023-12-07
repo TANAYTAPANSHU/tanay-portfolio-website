@@ -26,7 +26,9 @@ import {
     typescript,
     python,
     postgresql,
-    antd
+    antd,
+    whiteboard,
+    samvad
 } from "../assets/icons";
 
 interface linkInterface {
@@ -152,7 +154,7 @@ export const experiences : experience[] = [
         date: "Jan 2021 - Mar 2022",
         points: [
             " Worked on the frontend development of no code application Namaste Business, which develops users own app apk in less than 2 minutes.",
-            "Developed, optimized, and worked on improving the UIs of the Mela application, collaborating with the product manager and designers. (Mela had grown to over 100,000 downloads, which is a significant increase from the approximately 50,000 downloads it had when I initially joined.)",
+            "Developed and optimized UIs for Mela and Namaste business,{achieving 100,000+ downloads} through collaboration with the product team.",
             "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
             "Implementing responsive design and ensuring cross-browser compatibility.",
             "Participating in code reviews and providing constructive feedback to other developers.",
@@ -220,45 +222,45 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+        iconUrl: react,
+        theme: 'btn-back-orange',
+        name: 'Portfolio Website',
+        description: 'Underpinning the entire web experience is the powerful "three.js" library, bringing unparalleled 3D graphics and rendering capabilities.A  portfolio that not only showcases my work but also reflects my commitment to excellence and innovation in web development.',
+        liveLink: 'https://github.com/adrianhajdin/pricewise',
+        githubLink: ''
+
+        
     },
     {
-        iconUrl: threads,
+        iconUrl: whiteboard,
         theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
+        name: 'Whiteboard Application',
+        description: 'Whiteboard provides a drawing canvas where users can create sketches with various drawing tools and options. Users can do real time sharing.',
+        liveLink: 'https://github.com/adrianhajdin/threads',
+        githubLink: 'https://whiteboard-lilac-seven.vercel.app/'
     },
     {
-        iconUrl: car,
+        iconUrl: samvad,
         theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'Samvad, a video confrenece application',
+        description: ' WebRTC-based web application built using Next.js. Samvad Connect allows users to make anonymous calls with one another, enabling secure and private communication without revealing personal information.',
+        liveLink: 'https://video-conference-webapp.vercel.app/',
+        githubLink: 'https://github.com/TANAYTAPANSHU/video-conference-webapp' 
+    },
+    {
+        iconUrl: pricewise,
+        theme: 'btn-back-pink',
+        name: 'Mohalla Bazaar Application',
+        description: 'A react native application that locates all your local vendors/businesses in your pincode.',
+        apkLink: 'https://drive.google.com/file/d/1VFXF0DxgOdqGOfRLqV4CE1OiSdlKeE5j/view',
+        githubLink: 'https://github.com/TANAYTAPANSHU/College-Pocket-App'
     },
     {
         iconUrl: snapgram,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        name: 'Ecommerce App',
+        description: 'Ecommerce application made using the fundamental concepts of React.JS hooks useState, useEffect, useContext, useReducer and custom hooks. Also, react-redux is used for making the cart and react-router-dom navigate and link pages.',
+        liveLink: 'https://hardcore-northcutt-2c0d29.netlify.app/',
+        githubLink: 'https://github.com/TANAYTAPANSHU/ecommerce-app-react'
     },
-    {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
-    },
-    {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
 ];

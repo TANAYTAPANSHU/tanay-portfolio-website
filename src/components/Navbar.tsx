@@ -44,7 +44,7 @@ const Navbar = () => {
         >
           Github
         </a>
-        
+
         <a
           href="https://www.linkedin.com/in/tanay-tapanshu-a128a8179/"
           className={"text-black hover:text-blue-500"}
@@ -52,6 +52,15 @@ const Navbar = () => {
           rel="noopener noreferrer"
         >
           LinkedIn
+        </a>
+        <a
+          href="https://www.example.com/path-to-your-resume.pdf"
+          className={"text-black hover:text-blue-500"}
+          target="_blank"
+          rel="noopener noreferrer"
+          download="your-resume.pdf"
+        >
+          Resume
         </a>
       </nav>
     </header>

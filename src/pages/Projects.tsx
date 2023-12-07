@@ -10,7 +10,7 @@ const Projects = () => {
       <h1 className='head-text'>
         My{" "}
         <span className='blue-gradient_text drop-shadow font-semibold'>
-          Projects
+         Hobby Projects
         </span>
       </h1>
 
@@ -31,7 +31,7 @@ const Projects = () => {
                 <img
                   src={project.iconUrl}
                   alt='threads'
-                  className='w-1/2 h-1/2 object-contain'
+                  className='w-3/4 h-3/4 object-contain'
                 />
               </div>
             </div>
@@ -41,20 +41,39 @@ const Projects = () => {
                 {project.name}
               </h4>
               <p className='mt-2 text-slate-500'>{project.description}</p>
-              <div className='mt-5 flex items-center gap-2 font-poppins'>
+              <div className='mt-5 flex items-center gap-4 font-poppins'>
+              {project.liveLink && (
                 <Link
-                  to={project.link}
+                  to={project.liveLink}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='font-semibold text-blue-600'
                 >
                   Live Link
                 </Link>
-                {/* <img
-                  src={arrow}
-                  alt='arrow'
-                  className='w-4 h-4 object-contain'
-                /> */}
+              )}  
+                {project.apkLink && (
+                <Link
+                  to={project.apkLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='font-semibold text-blue-600'
+                >
+                  Get Apk
+                </Link>
+              )}  
+             {project.githubLink && (
+                <Link
+                to={project.githubLink}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='font-semibold text-black'
+              >
+               Code link
+              </Link>
+              )}  
+                      
+               
               </div>
             </div>
           </div>

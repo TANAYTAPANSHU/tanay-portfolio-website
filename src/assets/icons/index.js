@@ -29,6 +29,8 @@ import soundoff from './soundoff.png'
 import postgresql from './postgresql.png'
 import python from './python.png'
 import antd from './antd.svg'
+import whiteboard from './whiteboardImage.jpeg'
+import samvad from './samvad.png'
 
 export {
     css,
@@ -61,5 +63,7 @@ export {
     soundoff,
     postgresql,
     python,
-    antd
+    antd,
+    whiteboard,
+    samvad
 }
