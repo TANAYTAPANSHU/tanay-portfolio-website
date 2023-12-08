@@ -54,7 +54,7 @@ const Navbar = () => {
           LinkedIn
         </a>
         <a
-          href="https://www.example.com/path-to-your-resume.pdf"
+          href="https://drive.google.com/file/d/19b_Vq7ipJj3Nrqh3bsTrS1Rlbws5FJ9j/view?usp=sharing"
           className={"text-black hover:text-blue-500"}
           target="_blank"
           rel="noopener noreferrer"

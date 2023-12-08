@@ -37,18 +37,18 @@ export  default function Bird() {
     // Update the X and Z positions based on the direction
     if (birdRef.current.rotation.y === 0) {
       // Moving forward
-      birdRef.current.position.x += 0.01;
+      birdRef.current.position.x += 0.02;
       birdRef.current.position.z -= 0.01;
     } else {
       // Moving backward
-      birdRef.current.position.x -= 0.01;
+      birdRef.current.position.x -= 0.02;
       birdRef.current.position.z += 0.01;
     }
   });
 
   return (
     // to create and display 3D objects
-    <mesh ref={birdRef} position={[0, 0.6, 2]} scale={[1, 1, 1]}>
+    <mesh ref={birdRef} position={[0, 1.6, 2]} scale={[1, 1, 1]}>
       <primitive object={scene} />
     </mesh>
   );

@@ -226,8 +226,7 @@ export const projects = [
         theme: 'btn-back-orange',
         name: 'Portfolio Website',
         description: 'Underpinning the entire web experience is the powerful "three.js" library, bringing unparalleled 3D graphics and rendering capabilities.A  portfolio that not only showcases my work but also reflects my commitment to excellence and innovation in web development.',
-        liveLink: 'https://github.com/adrianhajdin/pricewise',
-        githubLink: ''
+        githubLink: 'https://github.com/TANAYTAPANSHU/tanay-portfolio-website'
 
         
     },
@@ -242,7 +241,7 @@ export const projects = [
     {
         iconUrl: samvad,
         theme: 'btn-back-blue',
-        name: 'Samvad, a video confrenece application',
+        name: 'Samvad, a video conference application',
         description: ' WebRTC-based web application built using Next.js. Samvad Connect allows users to make anonymous calls with one another, enabling secure and private communication without revealing personal information.',
         liveLink: 'https://video-conference-webapp.vercel.app/',
         githubLink: 'https://github.com/TANAYTAPANSHU/video-conference-webapp' 

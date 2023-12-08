@@ -44,7 +44,7 @@ const Home = () => {
 
   setTimeout(()=>{
    setInstructionVisible(false)
-  },5500 )
+  },5000 )
 
   return (
     <section className="w-full h-screen relative">

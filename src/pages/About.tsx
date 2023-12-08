@@ -31,8 +31,8 @@ const About = () => {
 
         <div className="mt-16 flex flex-wrap gap-12">
           {skills.map((skill) => (
-            <div className="block-container w-20 h-20 has-tooltip">
-              <span className='tooltip rounded shadow-lg p-1 bg-white text-base text-black font-bold'>{skill.name}</span>
+            <div className="block-container w-20 h-20 has-tooltip ">
+              <span className='tooltip cursor-pointer rounded shadow-lg p-1 bg-white text-base text-black font-bold '>{skill.name}</span>
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl  flex justify-center items-center">
                 <img
