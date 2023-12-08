@@ -44,7 +44,7 @@ const Home = () => {
 
   setTimeout(()=>{
    setInstructionVisible(false)
-  },5000 )
+  },10000 )
 
   return (
     <section className="w-full h-screen relative">
@@ -52,14 +52,14 @@ const Home = () => {
        {currentStage && <HomeInfo currentStage={currentStage} /> }
      </div>
    {instructionVisible && (
- <div  className='absolute w-1/2 top-20 left-0 right-0 z-10 mx-auto flex items-center justify-center bg-white p-8 '>
- <span className="text-xl md:text-4xl">Take a tour of the project—simply drag around.</span>
+ <div  className='absolute w-1/2 top-15 left-0 md:right-15 z-10 mx-auto flex items-center justify-center bg-white p-8 '>
+ <span className="text-xl md:text-2xl">Embark on a project tour: Simply press and hold the mouse to bring the plane to a pause</span>
 </div>
    )}
     
       <Canvas
         className={`w-full h-screen bg-transparent ${
-          !isRotating ? "cursor-grabbing" : "cursor-grab"
+          isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
         camera={{ near: 0.1, far: 1000 }}
       >

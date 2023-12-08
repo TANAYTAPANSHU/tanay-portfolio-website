@@ -35,7 +35,7 @@ const HomeInfo = ({ currentStage }) => {
         </p>
 
         <Link to='/about' className='bg-white neo-btn mt-6'>
-          Check my experience
+          Check experience
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
       </div>
