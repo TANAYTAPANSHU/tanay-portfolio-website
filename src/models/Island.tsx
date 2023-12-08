@@ -42,6 +42,20 @@ const Island = ({isRotating, setIsRotating ,setCurrentStage , ...props}) => {
     const islandRef = useRef();
     const {gl, viewport} = useThree();
 
+    useEffect(() => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'fetch';
+      link.href = islandScene;
+      link.crossOrigin = 'anonymous';
+    
+      document.head.appendChild(link);
+    
+      return () => {
+        document.head.removeChild(link);
+      };
+    }, [islandScene]);
+
 
   const { nodes, materials } = useGLTF(islandScene) as GLTFResult|any;
   const lastX = useRef(0);
