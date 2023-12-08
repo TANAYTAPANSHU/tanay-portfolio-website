@@ -9,15 +9,15 @@ import HomeInfo from "../components/HomeInfo";
 
 const Home = () => {
   //boolean to check for rotation motion
-  const [isRotating, setIsRotating] = useState(false);
-  const [currentStage, setCurrentStage] = useState(1);
+  const [isRotating, setIsRotating] = useState(true);
+  const [currentStage, setCurrentStage] = useState();
   const [instructionVisible,setInstructionVisible] = useState<boolean>(true)
    
 //adjust the screen size for the background scene 
   const adjust3dBackgroundForScreenSize = () => {
     let screenScale = null;
-    const screenPosition = [5, -7.5, -43];
-    const rotation = [0.3, 3.4, 0];
+    const screenPosition = [5, -10.5, -60];
+    const rotation = [0.2, 3.4, 0];
     if (window.innerWidth < 768) {
       screenScale = [1, 1, 1];
     } else {
@@ -35,7 +35,7 @@ const Home = () => {
       screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0];
     } else {
-      screenScale = [3, 3, 3];
+      screenScale = [0, 0, 0];
       screenPosition = [0, 0, 0];
     }
     return [screenScale, screenPosition];
@@ -59,7 +59,7 @@ const Home = () => {
     
       <Canvas
         className={`w-full h-screen bg-transparent ${
-          isRotating ? "cursor-grabbing" : "cursor-grab"
+          !isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
         camera={{ near: 0.1, far: 1000 }}
       >

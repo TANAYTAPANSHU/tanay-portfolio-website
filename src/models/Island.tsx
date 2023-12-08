@@ -65,41 +65,20 @@ const Island = ({isRotating, setIsRotating ,setCurrentStage , ...props}) => {
   const handlePointerDown = (e:any) => {
     e.stopPropagation();
     e.preventDefault();
-     setIsRotating(true)
+     setIsRotating(false)
    
-     const clientX = e.touches ? e.touches[0].clientX : e.clientX ;
-     lastX.current = clientX;
+    //  const clientX = e.touches ? e.touches[0].clientX : e.clientX ;
+    //  lastX.current = clientX;
   }
 
  
   const handlePointerUp = (e:any) => {
     e.stopPropagation();
     e.preventDefault();
-    setIsRotating(false)
+    setIsRotating(true)
   
   }
 
-  const handlePointerMove = (e:any) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if (isRotating) {
-      // If rotation is enabled, calculate the change in clientX position
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-
-      // calculate the change in the horizontal position of the mouse cursor or touch input,
-      // relative to the viewport's width
-      const delta = (clientX - lastX.current) / viewport.width;
-
-      // Update the island's rotation based on the mouse/touch movement
-      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
-
-      // Update the reference for the last clientX position
-      lastX.current = clientX;
-
-      // Update the rotation speed
-      rotationSpeed.current = delta * 0.01 * Math.PI;
-    }
-  }
   // Handle keydown events
   const handleKeyDown = (event) => {
     if (event.key === "ArrowLeft") {
@@ -122,26 +101,38 @@ const Island = ({isRotating, setIsRotating ,setCurrentStage , ...props}) => {
     }
   };
 
+  const flyingPlane = () => {
+    if(isRotating)
+    {
+      islandRef.current.rotation.y -= 0.006 * Math.PI;
+    }
+   
+  }
+
   useEffect(() => {
     // Add event listeners for pointer and keyboard events
     const canvas = gl.domElement;
     canvas.addEventListener("pointerdown", handlePointerDown);
     canvas.addEventListener("pointerup", handlePointerUp);
-    canvas.addEventListener("pointermove", handlePointerMove);
+    // canvas.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("keyup", handleKeyUp);
+    const intervalId =   setInterval(()=>{
+      flyingPlane()
+    },100 )
+    // window.addEventListener("keyup", handleKeyUp);
 
 
     // Remove event listeners when component unmounts
     return () => {
+      clearInterval(intervalId)
       canvas.removeEventListener("pointerdown", handlePointerDown);
       canvas.removeEventListener("pointerup", handlePointerUp);
-      canvas.removeEventListener("pointermove", handlePointerMove);
+      // canvas.removeEventListener("pointermove", handlePointerMove);
       window.addEventListener("keydown", handleKeyDown);
-      window.addEventListener("keyup", handleKeyUp);
+      // window.addEventListener("keyup", handleKeyUp);
 
     };
-  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+  }, [gl, handlePointerDown, handlePointerUp]);
  
   // This function is called on each frame update
   useFrame(() => {
@@ -168,17 +159,18 @@ const Island = ({isRotating, setIsRotating ,setCurrentStage , ...props}) => {
         //connect with me
           setCurrentStage(4);
           break;
-        case normalizedRotation >= 0.85 && normalizedRotation <= 1.4:
+        case normalizedRotation >= 0 && normalizedRotation <= 2:
          //projects 
           setCurrentStage(3);
           break;
-        case normalizedRotation >= 2.4 && normalizedRotation <= 3.1:
+        case normalizedRotation >= 2.1 && normalizedRotation <= 4.15:
           //stage for my experience
-          setCurrentStage(2);
-          break;
-        case normalizedRotation >= 4.25 && normalizedRotation <= 4.8:
-          //stage for my intro
+         
           setCurrentStage(1);
+          break;
+        case normalizedRotation >= 4.25 && normalizedRotation <= 5.3:
+          //stage for my intro
+          setCurrentStage(2);
           break;
         default:
           setCurrentStage(null);

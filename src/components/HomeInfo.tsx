@@ -5,6 +5,7 @@ import { arrow } from "../assets/icons";
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
+      <div className='info-box'>
       <h1 className='sm:text-xl sm:leading-snug text-center bg-blue-500 rounded-md py-4 px-8 text-white mx-5'>
         Hi, I'm
         <span className='font-semibold mx-2 text-white'>Tanay</span>
@@ -12,6 +13,18 @@ const HomeInfo = ({ currentStage }) => {
         <br />
         A Software Developer from  Bangalore, India 🇮🇳
       </h1>
+      <a
+          href="https://www.linkedin.com/in/tanay-tapanshu-a128a8179/"
+          className='bg-white neo-btn'
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+        Check my LinkedIn
+        <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
+      
+      </a>
+    </div>
     );
 
   if (currentStage === 2) {
@@ -21,8 +34,8 @@ const HomeInfo = ({ currentStage }) => {
           Worked with many companies <br /> and picked up many skills along the way
         </p>
 
-        <Link to='/about' className='bg-white neo-btn'>
-          Learn more
+        <Link to='/about' className='bg-white neo-btn mt-6'>
+          Check my experience
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
       </div>
