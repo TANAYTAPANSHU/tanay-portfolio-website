@@ -53,7 +53,7 @@ const Home = () => {
      </div>
    {instructionVisible && (
  <div  className='absolute w-1/2 top-15 left-0 md:right-15 z-10 mx-auto flex items-center justify-center bg-white p-8 '>
- <span className="text-xl md:text-2xl">Embark on a project tour: Simply press and hold the mouse to bring the plane to a pause</span>
+ <span className="text-xl md:text-xl">Embark on a project tour: Simply press and hold the mouse to bring the plane to a pause</span>
 </div>
    )}
     

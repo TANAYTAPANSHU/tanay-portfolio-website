@@ -235,8 +235,8 @@ export const projects = [
         theme: 'btn-back-green',
         name: 'Whiteboard Application',
         description: 'Whiteboard provides a drawing canvas where users can create sketches with various drawing tools and options. Users can do real time sharing.',
-        liveLink: 'https://github.com/adrianhajdin/threads',
-        githubLink: 'https://whiteboard-lilac-seven.vercel.app/'
+        liveLink: 'https://whiteboard-lilac-seven.vercel.app/',
+        githubLink: 'https://github.com/adrianhajdin/threads'
     },
     {
         iconUrl: samvad,
