@@ -8,6 +8,7 @@ import cradlewise from './cradlewise.jpeg'
 import mela from './mela.jpeg'
 import relevel from './relevel.jpeg'
 import cellstrat from './cellstrat.svg'
+import unacademyLogo from './unacademyLogo.jpeg'
 
 export {
     hero,
@@ -19,6 +20,7 @@ export {
     cradlewise,
     mela,
     relevel,
-    cellstrat
+    cellstrat,
+    unacademyLogo
 
 }

@@ -23,7 +23,7 @@ export default function Plane({ isRotating, ...props }) {
   }, [actions, isRotating]);
 
   return (
-    <mesh {...props} ref={planeRef} position={[1, -0.5, -0.3]} scale={[0.7, 0.6, 0.7]} rotation={[Math.PI / 9, 6, 0.2]}>
+    <mesh {...props} ref={planeRef} position={[1, 0.5, -0.5]} scale={[0.7, 0.6, 0.6]} rotation={[Math.PI / 9, 6, 0.2]}>
       // use the primitive element when you want to directly embed a complex 3D
       model or scene
       <primitive object={scene} />

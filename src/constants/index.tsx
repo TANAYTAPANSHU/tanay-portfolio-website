@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla, cradlewise, mela, relevel, cellstrat } from "../assets/images";
+import { meta, shopify, starbucks, tesla, cradlewise, mela, relevel, cellstrat , unacademyLogo } from "../assets/images";
 import {
     car,
     contact,
@@ -132,7 +132,25 @@ export const skills = [
 
 export const experiences : experience[] = [
     {
-        title: "Frontend Developer",
+        title: "Software Engineer",
+        company_name: "Unacademy",
+        icon: unacademyLogo,
+        iconBg: "rgba(255, 255, 255)",
+        date: "Dec 2023 - Present",
+        points: [
+            "Working with an unicorn startup unacademy,developing the NextLevel application,ajob search app with over 1M+ downloads.",
+            "Utilized React Native to ship features in collaboration with multiple teams,including search implementation, profile, jobs page, and home feed",
+            "Enhanced overall application experience by reducing loadtime and lag,resulting in improved retention, downloads and daily active users (DAU)",
+            "Led the development of the web application using Next.js,focusing on product optimization, solving complex problems, SEO, and collaborating with multiple teams to ship products.",
+            "Enabled responsive mobile web(mWeb),resulting in better user experience.",
+            "Improved page load time through optimizing frontend logic, debouncing,throttling employing lazy loading, and fine-tuning image sizes and rendering for optimal quality and performance. Assessed page performance using tools like Lighthouse and Google Search Console.",
+            "Enabled responsive mobile web(mWeb),resulting in better user experience.",
+        ],
+        skills: ["HTML","CSS" , "JavaScript", "Typescript",  "React Native", "Next JS",  "AWS"], 
+        links : [{desc:"Nextlevel Website",href:"https://nextlevel.app/"}  ]
+    },
+    {
+        title: "Software Engineer",
         company_name: "Cradlewise",
         icon: cradlewise,
         iconBg: "rgb(252 209 209)",

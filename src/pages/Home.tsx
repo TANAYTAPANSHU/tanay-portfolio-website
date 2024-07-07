@@ -16,12 +16,12 @@ const Home = () => {
 //adjust the screen size for the background scene 
   const adjust3dBackgroundForScreenSize = () => {
     let screenScale = null;
-    const screenPosition = [5, -10.5, -60];
-    const rotation = [0.2, 3.4, 0];
+    const screenPosition = [5, -5, -10];
+    const rotation = [0, 2, 0];
     if (window.innerWidth < 768) {
       screenScale = [1, 1, 1];
     } else {
-      screenScale = [1.35, 1.35, 1.35];
+      screenScale = [0.7, 0.7, 0.7];
     }
     return [screenScale, screenPosition, rotation];
   };
@@ -35,8 +35,8 @@ const Home = () => {
       screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0];
     } else {
-      screenScale = [0, 0, 0];
-      screenPosition = [0, 0, 0];
+      screenScale = [100, 300, 3];
+      screenPosition = [5000, 1000, 1000];
     }
     return [screenScale, screenPosition];
   };
@@ -87,7 +87,7 @@ const Home = () => {
             position={planePosition}
             scale={planeScale}
             isRotating={isRotating}
-            rotation={[0, 20, 0]}
+            rotation={[100, 0, 500]}
           />
         </Suspense>
       </Canvas>
