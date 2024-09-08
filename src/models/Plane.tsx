@@ -29,7 +29,7 @@ export default function Plane({ isRotating, ...props }) {
 
 
         // Toggle position values with tolerance checks
-        planeRef.current.position.x = floatEquals(planeRef.current.position.x, -3) ? -3.011 : -3;
+        planeRef.current.position.x = floatEquals(planeRef.current.position.x, -2) ? -2.01 : -2;
         planeRef.current.position.y = floatEquals(planeRef.current.position.y, 0) ? 0.011 : 0;
         planeRef.current.position.z = floatEquals(planeRef.current.position.z, -1) ? -1.011 : -1;
       }, 50); // Increased the interval to 100ms to reduce updates
