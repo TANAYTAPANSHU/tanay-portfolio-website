@@ -6,18 +6,18 @@ import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
-import mySound from  "../assets/sakura.mp3"
+// import mySound from  "../assets/sakura.mp3"
 
 const Home = () => {
 
-  useEffect(()=>{
- const audio = new Audio(mySound);
-    audio.play();
+//   useEffect(()=>{
+//  const audio = new Audio(mySound);
+//     audio.play();
 
-  return ()=>{
-    audio.pause()
-  }  
-  },[])
+//   return ()=>{
+//     audio.pause()
+//   }  
+//   },[])
   //boolean to check for rotation motion
   const [isRotating, setIsRotating] = useState(true);
   const [currentStage, setCurrentStage] = useState();
