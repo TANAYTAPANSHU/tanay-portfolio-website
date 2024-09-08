@@ -69,12 +69,12 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
       if (isRotating) {
         setIsRotating(false);
       }
-      islandRef.current.rotation.y -= 0.01 * Math.PI;
-      rotationSpeed.current = 0.01;
+      islandRef.current.rotation.y += 0.02 * Math.PI;
+      // rotationSpeed.current = 0.01;
     } else if (event.key === "ArrowRight") {
       if (!isRotating) setIsRotating(true);
-      islandRef.current.rotation.y += 0.01 * Math.PI;
-      rotationSpeed.current = -0.01;
+      islandRef.current.rotation.y -= 0.02 * Math.PI;
+      rotationSpeed.current = -0.04;
     } else if (event.key === "ArrowDown") {
       if (islandRef.current.scale.x < 3) {
         islandRef.current.scale.x = islandRef.current.scale.x + 0.05;
@@ -108,7 +108,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
 
   const flyingPlane = () => {
     if (isRotating) {
-      islandRef.current.rotation.y += 0.006 * Math.PI;
+      islandRef.current.rotation.y -= 0.003 * Math.PI;
     }
   };
 
@@ -118,10 +118,12 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
     canvas.addEventListener("pointerup", handlePointerUp);
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup",handleKeyUp)
+    window.addEventListener("keyright",()=>{console.log("right")})
     canvas.addEventListener("pointermove", handlePointerMove);
+  
     const intervalId = setInterval(() => {
       flyingPlane();
-    }, 100);
+    }, 50);
 
     return () => {
       clearInterval(intervalId);
@@ -129,6 +131,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
       canvas.removeEventListener("pointerup", handlePointerUp);
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup",handleKeyUp)
+      window.removeEventListener("keyright",()=>{console.log("right")})
       canvas.removeEventListener("pointermove", handlePointerMove);
     };
   }, [gl, handlePointerDown, handlePointerUp]);
@@ -174,8 +177,8 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
           <group name="dad255dd2cf24ae0bb357684e49722b4fbx" rotation={[Math.PI / 2, 0, 0]}>
             <group name="Object_2">
               <group name="RootNode">
-                <group name="Scene" position={[-4.794, 0, 0.278]} rotation={[-Math.PI / 2, 0, 0]}>
-                  <group name="Object_5" position={[-14, 15.788, 4.337]}>
+                <group name="Scene" position={[-5.794, -3, 0.278]} rotation={[-Math.PI / 2, 0, 0]}>
+                  <group name="Object_5" position={[0, 15.788, 4.337]}>
                     <mesh
                       name="Scene_Texture-base_0"
                       castShadow
@@ -205,7 +208,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                       material={materials['Book-tittle']}
                     />
                   </group>
-                  <group
+                  {/* <group
                     name="Mill-wind-wheel"
                     position={[-35.783, -27.192, 3.888]}
                     rotation={[0.445, -0.447, -0.498]}>
@@ -221,7 +224,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                         material={materials['Texture-base']}
                       />
                     </group>
-                  </group>
+                  </group> */}
                   <group
                     name="Mill-water-wheel"
                     position={[3.708, -15.395, -0.444]}
@@ -237,7 +240,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                     </group>
                   </group>
                 </group>
-                <group
+                {/* <group
                   name="flag"
                   position={[-11.513, 12.497, -6.752]}
                   rotation={[-Math.PI / 2, 0, -Math.PI / 6]}>
@@ -268,7 +271,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                       morphTargetInfluences={nodes['1'].morphTargetInfluences}
                     />
                   </group>
-                </group>
+                </group> */}
                 <group
                   name="Waterfall"
                   position={[-4.794, 0, 0.351]}

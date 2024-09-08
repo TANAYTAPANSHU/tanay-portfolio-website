@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Island from "../models/Island";
@@ -6,8 +6,18 @@ import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
+import mySound from  "../assets/sakura.mp3"
 
 const Home = () => {
+
+  useEffect(()=>{
+ const audio = new Audio(mySound);
+    audio.play();
+
+  return ()=>{
+    audio.pause()
+  }  
+  },[])
   //boolean to check for rotation motion
   const [isRotating, setIsRotating] = useState(true);
   const [currentStage, setCurrentStage] = useState();
@@ -16,12 +26,12 @@ const Home = () => {
 //adjust the screen size for the background scene 
   const adjust3dBackgroundForScreenSize = () => {
     let screenScale = null;
-    const screenPosition = [5, -5, -10];
+    const screenPosition = [5, -1, -4];
     const rotation = [0, 2, 0];
     if (window.innerWidth < 768) {
       screenScale = [1, 1, 1];
     } else {
-      screenScale = [0.7, 0.7, 0.7];
+      screenScale = [0.465, 0.465, 0.465];
     }
     return [screenScale, screenPosition, rotation];
   };
@@ -74,7 +84,7 @@ const Home = () => {
           {/* illuminates in gradient color */}
           <hemisphereLight   groundColor={"#9fad65"}  intensity={2}/>
           <Sky  isRotating={isRotating} />
-          <Bird />
+          {/* <Bird /> */}
           <Island
             position={islandPosition}
             scale={islandScale}

@@ -6,7 +6,7 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
       <div className='info-box'>
-      <h1 className='sm:text-xl sm:leading-snug text-center bg-blue-500 rounded-md py-4 px-8 text-white mx-5'>
+      <h1 className='sm:text-xl sm:leading-snug text-center bg-blue-500 rounded-md pt-4 pb-2 px-0 text-white '>
         Hi, I'm
         <span className='font-semibold mx-2 text-white'>Tanay</span>
         👋
@@ -30,11 +30,11 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 2) {
     return (
       <div className='info-box'>
-        <p className='font-medium sm:text-xl text-center'>
+        <p className='sm:text-xl sm:leading-snug text-center bg-blue-500 rounded-md pt-4 pb-2 px-0 text-white '>
           Worked with many companies <br /> and picked up many skills along the way
         </p>
 
-        <Link to='/about' className='bg-white neo-btn mt-6'>
+        <Link to='/about' className='bg-white neo-btn'>
           Check experience
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
@@ -45,7 +45,7 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 3) {
     return (
       <div className='info-box'>
-        <p className='font-medium text-center sm:text-xl'>
+        <p className='sm:text-xl sm:leading-snug text-center bg-blue-500 rounded-md pt-4 pb-2 px-0 text-white'>
           Led multiple projects to success over the years. <br /> Curious about the impact?
         </p>
 
@@ -60,7 +60,7 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 4) {
     return (
       <div className='info-box'>
-      <p className='font-medium sm:text-xl text-center'>
+      <p className='sm:text-xl sm:leading-snug text-center bg-blue-500 rounded-md pt-4 pb-2 px-0 text-white'>
         Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
       </p>
 

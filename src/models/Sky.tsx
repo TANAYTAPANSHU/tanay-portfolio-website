@@ -12,7 +12,7 @@ const Sky = ({...props}) => {
   // 'delta' represents the time in seconds since the last frame.
   useFrame((_, delta) => {
     if (props.isRotating) {
-      skyRef.current.rotation.y -= 0.25 * delta; // Adjust the rotation speed as needed
+      skyRef.current.rotation.y += 0.125 * delta; // Adjust the rotation speed as needed
     }
   });
 
