@@ -9,6 +9,7 @@ import mela from './mela.jpeg'
 import relevel from './relevel.jpeg'
 import cellstrat from './cellstrat.svg'
 import unacademyLogo from './unacademyLogo.jpeg'
+import tanay from './tanay.png'
 
 export {
     hero,
@@ -21,6 +22,7 @@ export {
     mela,
     relevel,
     cellstrat,
-    unacademyLogo
+    unacademyLogo,
+    tanay
 
 }

@@ -15,7 +15,7 @@ const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-black"
+            isActive ? "text-blue-500" : "text-white"
           }
         >
           About
@@ -23,7 +23,7 @@ const Navbar = () => {
         <NavLink
           to="/projects"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-black"
+            isActive ? "text-blue-500" : "text-white"
           }
         >
           Projects
@@ -31,14 +31,14 @@ const Navbar = () => {
         <NavLink
           to="/Contact"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-black"
+            isActive ? "text-blue-500" : "text-white"
           }
         >
           Contact
         </NavLink>
         <a
           href="https://github.com/TANAYTAPANSHU"
-          className={"text-black hover:text-blue-500"}
+          className={"text-white hover:text-blue-500"}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -47,7 +47,7 @@ const Navbar = () => {
 
         <a
           href="https://www.linkedin.com/in/tanay-tapanshu-a128a8179/"
-          className={"text-black hover:text-blue-500"}
+          className={"text-white hover:text-blue-500"}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -55,7 +55,7 @@ const Navbar = () => {
         </a>
         <a
           href="https://drive.google.com/file/d/19b_Vq7ipJj3Nrqh3bsTrS1Rlbws5FJ9j/view?usp=sharing"
-          className={"text-black hover:text-blue-500"}
+          className={"text-white hover:text-blue-500"}
           target="_blank"
           rel="noopener noreferrer"
           download="your-resume.pdf"
