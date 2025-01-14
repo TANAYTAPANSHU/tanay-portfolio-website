@@ -1,14 +1,13 @@
-// @ts-nocheck
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, forwardRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
 import planeScene from "../assets/3d/plane.glb";
 
-export default function Plane({ isRotating, ...props }) {
+const Plane = forwardRef(({ isRotating, ...props }, ref) => {
   const planeRef = useRef();
   const intervalRef = useRef(null);
   const [planeRotationIndex, setPlaneRotationIndex] = useState(9);
-  const rotationRef = useRef(9)
+  const rotationRef = useRef(9);
 
   // Load the 3D model and its animations
   const { scene, animations } = useGLTF(planeScene);
@@ -16,7 +15,6 @@ export default function Plane({ isRotating, ...props }) {
   // Get animation actions associated with the plane
   const { actions } = useAnimations(animations, planeRef);
 
-  // Function to compare floating point numbers
   const floatEquals = (a, b, tolerance = 0.01) => Math.abs(a - b) < tolerance;
 
   // Effect to control plane animation and rotation
@@ -25,33 +23,33 @@ export default function Plane({ isRotating, ...props }) {
       actions["Animation"].play();
 
       intervalRef.current = setInterval(() => {
-        // Update rotation index safely
-
-
-        // Toggle position values with tolerance checks
         planeRef.current.position.x = floatEquals(planeRef.current.position.x, -2) ? -2.01 : -2;
         planeRef.current.position.y = floatEquals(planeRef.current.position.y, 0) ? 0.011 : 0;
         planeRef.current.position.z = floatEquals(planeRef.current.position.z, -1) ? -1.011 : -1;
-      }, 50); // Increased the interval to 100ms to reduce updates
+      }, 50);
     } else {
       actions["Animation"].stop();
       clearInterval(intervalRef.current);
     }
 
-    // Cleanup interval on unmount or when `isRotating` changes
     return () => clearInterval(intervalRef.current);
   }, [actions, isRotating]);
 
   return (
     <mesh
       {...props}
-      ref={planeRef}
+      ref={(node) => {
+        planeRef.current = node;
+        if (typeof ref === 'function') ref(node);
+        else if (ref) ref.current = node;
+      }}
       position={[-3, 0, -1]}
       scale={[0.7, 0.6, 0.6]}
-      rotation={[Math.PI / 9, 6, 0.2]} // Dividing rotation by index
+      rotation={[Math.PI / 9, 6, 0.2]}
     >
-      {/* Embedding the 3D model */}
       <primitive object={scene} />
     </mesh>
   );
-}
+});
+
+export default Plane;

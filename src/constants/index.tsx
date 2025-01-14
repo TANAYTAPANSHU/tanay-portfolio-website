@@ -281,3 +281,9 @@ export const projects = [
         githubLink: 'https://github.com/TANAYTAPANSHU/ecommerce-app-react'
     },
 ];
+
+export const introduction = {
+   1: "Hi Welecom to Tanay's Portfolio",
+   2: "Click on the dektop, to see my work and play games",
+   3: "you can browse on different section to check it"
+}

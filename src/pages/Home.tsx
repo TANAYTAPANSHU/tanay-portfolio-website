@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Suspense, useEffect, useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Island from "../models/Island";
 import Sky from "../models/Sky";
@@ -8,7 +8,26 @@ import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
 // import mySound from  "../assets/sakura.mp3"
 
+const CameraFollow = ({ planeRef }) => {
+  const cameraRef = useRef();
+
+  useFrame(() => {
+    if (planeRef.current && cameraRef.current) {
+      const planePosition = planeRef.current.position;
+      cameraRef.current.position.set(
+        planePosition.x + 2,
+        planePosition.y + 1,
+        planePosition.z + 5
+      );
+      cameraRef.current.lookAt(planePosition);
+    }
+  });
+
+  return <perspectiveCamera ref={cameraRef} fov={75} near={0.1} far={1000} />;
+};
+
 const Home = () => {
+  const planeRef = useRef();
 
 //   useEffect(()=>{
 //  const audio = new Audio(mySound);
@@ -19,7 +38,7 @@ const Home = () => {
 //   }  
 //   },[])
   //boolean to check for rotation motion
-  const [isRotating, setIsRotating] = useState(true);
+  const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState();
   const [instructionVisible,setInstructionVisible] = useState<boolean>(true)
    
@@ -71,7 +90,7 @@ const Home = () => {
         className={`w-full h-screen bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
-        camera={{ near: 0.1, far: 1000 }}
+        // camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
           {/* it is like sunlight */}
@@ -85,15 +104,17 @@ const Home = () => {
           <hemisphereLight   groundColor={"#9fad65"}  intensity={2}/>
           <Sky  isRotating={isRotating} />
           {/* <Bird /> */}
-          <Island
+          {/* <Island
             position={islandPosition}
             scale={islandScale}
             rotation={islandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
-          />
+          /> */}
+            {/* <CameraFollow planeRef={planeRef} /> */}
           <Plane
+            ref={planeRef}
             position={planePosition}
             scale={planeScale}
             isRotating={isRotating}

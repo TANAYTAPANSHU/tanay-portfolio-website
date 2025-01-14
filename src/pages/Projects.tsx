@@ -6,7 +6,9 @@ import { projects } from "../constants";
 
 const Projects = () => {
   return (
-    <section className='max-container'>
+    <section className='max-container ' style={{
+      paddingTop:-50
+    }}>
       <h1 className='head-text'>
         My{" "}
         <span className='blue-gradient_text drop-shadow font-semibold'>
@@ -42,7 +44,7 @@ const Projects = () => {
               </h4>
               <p className='mt-2 text-slate-500'>{project.description}</p>
               <div className='mt-5 flex items-center gap-4 font-poppins'>
-              {project.liveLink && (
+              {/* {project.liveLink && (
                 <Link
                   to={project.liveLink}
                   target='_blank'
@@ -51,8 +53,8 @@ const Projects = () => {
                 >
                   Live Link
                 </Link>
-              )}  
-                {project.apkLink && (
+              )}   */}
+                {/* {project.apkLink && (
                 <Link
                   to={project.apkLink}
                   target='_blank'
@@ -61,8 +63,8 @@ const Projects = () => {
                 >
                   Get Apk
                 </Link>
-              )}  
-             {project.githubLink && (
+              )}   */}
+             {/* {project.githubLink && (
                 <Link
                 to={project.githubLink}
                 target='_blank'
@@ -71,7 +73,7 @@ const Projects = () => {
               >
                Code link
               </Link>
-              )}  
+              )}   */}
                       
                
               </div>
